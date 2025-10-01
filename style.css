@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #e45a92, #667eea, #764ba2);
+  color: #fff;
+}
+
+/* Background video full screen */
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* App container */
+.app {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.app:hover {
+  transform: translateY(-4px);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #30153f;
+}
+
+/* Input */
+input {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  color: #333;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px rgb(236, 121, 159);
+}
+
+/* Button */
+button {
+  /* background: rgb(236, 121, 159); */
+  background: rgb(228, 90, 146);
+  border: none;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background: rgb(247, 64, 125);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Result box */
+#result {
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 70px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #30153f;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input,
+  button {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
