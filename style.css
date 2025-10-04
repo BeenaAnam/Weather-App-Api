@@ -13,9 +13,10 @@ body {
   padding: 1rem;
   background: linear-gradient(135deg, #e45a92, #667eea, #764ba2);
   color: #fff;
+  overflow: hidden;
 }
 
-/* Background video full screen */
+/* Background video */
 #bg-video {
   position: fixed;
   right: 0;
@@ -23,7 +24,7 @@ body {
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -2;
 }
 
 /* App container */
@@ -37,6 +38,9 @@ body {
   text-align: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease;
+  animation: fadeIn 0.6s ease-in-out;
+  position: relative;
+  z-index: 1;
 }
 
 .app:hover {
@@ -69,7 +73,6 @@ input:focus {
 
 /* Button */
 button {
-  /* background: rgb(236, 121, 159); */
   background: rgb(228, 90, 146);
   border: none;
   padding: 0.9rem 1.2rem;
@@ -92,14 +95,25 @@ button:active {
 
 /* Result box */
 #result {
+  display: none;
   margin-top: 1.5rem;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   padding: 1rem;
   min-height: 70px;
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #30153f;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* City Image */
+#city-img {
+  display: none;
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes fadeIn {
@@ -113,16 +127,21 @@ button:active {
   }
 }
 
+/* Weather icon */
+.weather-icon {
+  width: 70px;
+  margin: 0.5rem auto;
+  display: block;
+}
+
 /* Responsive */
 @media (max-width: 480px) {
   .app {
     padding: 1.5rem;
   }
-
   h2 {
     font-size: 1.5rem;
   }
-
   input,
   button {
     font-size: 0.9rem;
